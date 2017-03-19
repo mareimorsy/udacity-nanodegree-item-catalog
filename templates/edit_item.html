@@ -1,0 +1,24 @@
+{% extends "master.html" %}
+
+{% block content %}
+
+	<h1>Update project</h1>
+
+	<form action="/category/{{item.category.id}}/item/{{item.id}}/update" method="POST">
+
+		<div class="form-group">
+	  		<input type="text" class="search-input form-control input-lg" placeholder="Update Project" autocomplete="off" name="name" value="{{ item.name }}">
+	  	</div>
+
+	  	<div class="form-group">
+	  	    <textarea class="form-control input-lg" name="description" placeholder="Project Description">{{item.description}}</textarea>
+	  	</div>
+
+	  	<div class="form-group">
+	  	    <button class="btn btn-primary ms-bg-color btn-lg" type="submit"> <span class="glyphicon glyphicon-edit"></span> Update Project</button>
+	  	</div>
+
+	</form>
+
+
+{% endblock %}

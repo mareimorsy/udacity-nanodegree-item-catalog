@@ -1,0 +1,105 @@
+body{
+	/*background: #f5f8fa;*/
+  color: #777;
+}
+.username{
+	/*display: inline-block;*/
+	margin-left: 8px;
+}
+.navbar-toggle{
+	    margin-top: 17px;
+}
+.nav-profile-photo {
+    border: 2px solid #d3e0e9;
+    border-radius: 50%;
+    height: 40px;
+    padding: 2px;
+    width: 40px;
+    height: 50px;
+    width: 50px;
+}
+
+.navbar-nav > li > a {
+  cursor: pointer;
+  font-weight: 400;
+}
+.navbar-nav > li > a,
+.navbar-brand,
+.hamburger {
+  height: 70px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.navbar .dropdown-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.navbar .dropdown-menu > li > a {
+  font-weight: 300;
+}
+.navbar .dropdown-menu > li > a i {
+  color: #a4aaae;
+}
+.navbar .dropdown-menu > li > a i.text-success {
+  color: #4eb76e;
+}
+.hamburger {
+  float: right;
+}
+.with-navbar {
+  padding-top: 100px;
+}
+
+/* start nav */
+.navbar{
+  margin-bottom: 0;
+  margin-bottom: 20px;
+}
+.navbar-default{
+	background: #fff;
+	border-color: #d3e0e9;
+  /*border: none;*/
+}
+.navbar-brand img{
+	width: 35px;
+	margin-right: 10px;
+}
+
+
+.action-btn .dropdown-menu {
+
+  left: auto;
+  right: 0;
+  min-width: 83px !important;
+  border: none;
+}
+
+.action-btn .dropdown-toggle{
+  border: none;
+  color: #777;
+}
+
+.relative-list{
+  position: relative;
+}
+
+.list-action-btn{
+  position: absolute;
+  right: 2px;
+  top: 3px;
+}
+
+.badge-left{
+  float: none !important;
+}

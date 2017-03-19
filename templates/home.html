@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-4">
+			<div class="panel panel-info">
+			  <div class="panel-heading list-group">Udacity Nanodegree Programs</div>
+			  	{% for category in categories %}
+			  		<a href="/category/{{ category.id }}" class="list-group-item">{{ category.name }}</a>
+			  	{% endfor %}
+			</div>
+		</div>
+
+		<div class="col-xs-12 col-sm-6 col-md-8">
+			<div class="panel panel-info">
+			  <div class="panel-heading list-group">Latest Projects</div>
+			  	{% for item in items %}
+			  		<a href="item/{{item.id}}" class="list-group-item">{{ item.name }} <span class="badge">{{ item.category.name }}</span></a>
+			  	{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

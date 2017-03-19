@@ -1,0 +1,34 @@
+{% extends "master.html" %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="panel panel-info">
+			  <div class="panel-heading ">Projects of <b>{{category.name}}</b>  &nbsp; &nbsp;<a href="/category/{{category.id}}/item/new" class="btn btn-primary "> <span class="glyphicon glyphicon-plus"> </span> Add new project</a></div>
+			  	{% for item in items %}
+					<div class="list-group relative-list">
+						<a href="/item/{{ item.id }}" class="list-group-item">
+							{{ item.name }}
+						</a>
+						{% if item.user.id == user_id %}
+							<div class="list-action-btn">
+								<div class="dropdown action-btn">
+								  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+								  </button>
+								  <ul class="dropdown-menu">
+								    <li><a href="/category/{{category.id}}/item/{{item.id}}/edit">Edit</a></li>
+								    <li>
+								      <a class="del-post-link" href="#">Delete</a>
+								      <form class="critical-frm" method="post" action="/category/{{category.id}}/item/{{item.id}}/delete"></form>
+								    </li>
+								  </ul>
+								</div>
+							</div>
+						{% endif %}
+					</div>
+			  	{% endfor %}
+			</div>
+		</div>
+	</div>
+{% endblock %}

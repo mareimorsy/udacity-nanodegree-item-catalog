@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+
+{% block content %}
+
+	<h1 style="position: relative;">
+		{{item.name}} <span class="badge"> {{item.category.name}}</span>
+
+		{% if item.user.id == user_id %}
+			<div class="list-action-btn">
+				<div class="dropdown action-btn">
+				  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="border: 1px solid #bbb;background: #777;color: #fff">
+				    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+				    <li><a href="/category/{{item.category.id}}/item/{{item.id}}/edit">Edit</a></li>
+				    <li>
+				      <a class="del-post-link" href="#">Delete</a>
+				      <form class="critical-frm" method="post" action="/category/{{item.category.id}}/item/{{item.id}}/delete"></form>
+				    </li>
+				  </ul>
+				</div>
+			</div>
+	{% endif %}
+
+	</h1>
+
+	<p>{{ item.description }}</p>
+
+{% endblock %}

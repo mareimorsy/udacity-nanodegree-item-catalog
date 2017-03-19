@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+
+{% block content %}
+
+
+<!-- <hr> -->
+			<div class="panel panel-info">
+			  <div class="panel-heading list-group">Udacity Nanodegree Programs &nbsp; &nbsp;<a href="category/new" class="btn btn-primary "> <span class="glyphicon glyphicon-plus"> </span> Add new nanodegree</a></div>
+			  	{% for category in categories %}
+			  		<div class="list-group relative-list">
+			  			<a href="/category/{{ category.id }}" class="list-group-item">
+			  				{{ category.name }}
+			  			</a>
+			  			{% if category.user.id == user_id %}
+			  				<div class="list-action-btn">
+			  					<div class="dropdown action-btn">
+			  					  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+			  					    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+			  					  </button>
+			  					  <ul class="dropdown-menu">
+			  					    <li><a href="/category/{{category.id}}/edit">Edit</a></li>
+			  					    <li>
+			  					      <a class="del-post-link" href="#">Delete</a>
+			  					      <form class="critical-frm" method="post" action="/category/{{category.id}}/delete"></form>
+			  					    </li>
+			  					  </ul>
+			  					</div>
+			  				</div>
+			  			{% endif %}
+			  		</div>
+			  	{% endfor %}
+			</div>
+
+
+{% endblock %}
